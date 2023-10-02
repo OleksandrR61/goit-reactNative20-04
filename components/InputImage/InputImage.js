@@ -1,8 +1,8 @@
-import { View, ImageBackground, TouchableOpacity, StyleSheet, Dimensions } from "react-native";
+import { ImageBackground, TouchableOpacity, StyleSheet, Dimensions } from "react-native";
 
 const avatar = require("../../assets/image/userExample.jpg");
 
-export default ImputImage = ({image, onPress}) => <>
+export default InputImage = ({image, onPress}) => <>
         <TouchableOpacity
             style={styles.container}
             onPress={() => onPress(avatar)}

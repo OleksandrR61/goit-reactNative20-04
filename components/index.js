@@ -4,7 +4,8 @@ import InputText from "./InputText/InputText";
 import InputSecretText from "./InputSecretText/InputSecretText";
 import ButtonPrimary from "./ButtonPrimary/ButtonPrimary";
 import ButtonSecondary from "./ButtonSecondary/ButtonSecondary";
-import ImputImage from "./ImputImage/ImputImage";
+import InputImage from "./InputImage/InputImage";
+import InputPhoto from "./InputPhoto/InputPhoto";
 
 export {
     Container,
@@ -13,5 +14,6 @@ export {
     InputSecretText,
     ButtonPrimary,
     ButtonSecondary,
-    ImputImage,
+    InputImage,
+    InputPhoto,
 };

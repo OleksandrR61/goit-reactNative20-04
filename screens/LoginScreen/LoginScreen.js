@@ -7,7 +7,7 @@ import {
     InputSecretText,
     ButtonPrimary,
     ButtonSecondary,
-    ImputImage,
+    InputImage,
 } from "../../components";
 
 export default LoginScreen = () => {

@@ -8,7 +8,7 @@ import {
     InputSecretText,
     ButtonPrimary,
     ButtonSecondary,
-    ImputImage,
+    InputImage,
 } from "../../components";
 
 export default RegistrationScreen = () => {
@@ -74,7 +74,7 @@ export default RegistrationScreen = () => {
                     onPress={() => {}}
                 />
 
-                <ImputImage
+                <InputImage
                     image={avatar}
                     onPress={image => setAvatar(image)}
                 />

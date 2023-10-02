@@ -5,8 +5,8 @@ export default InputText = ({
     value,
     onChangeText,
     placeholder,
-    keyboardType,
-    inputMode,
+    keyboardType = "default",
+    inputMode = "text",
     secureTextEntry = false,
     style,
 }) => {
@@ -42,7 +42,6 @@ const styles = StyleSheet.create({
 
         borderWidth: 1,
         borderRadius: 8,
-        borderColor: "#E8E8E8",
 
         backgroundColor: "#F6F6F6",
 
