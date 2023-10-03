@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
-import { View, ImageBackground, StyleSheet } from "react-native";
+import { View, ImageBackground, TouchableOpacity, StyleSheet } from "react-native";
 
 import { InputPhoto, InputText, ButtonPrimary } from "../../components";
 
 const mapPin = require("../../assets/image/mapPin.png");
+const trash = require("../../assets/image/trash.png");
 
 export default CreatePostsScreen = () => {
     const [ img, setImg ] = useState(null);
@@ -20,7 +21,14 @@ export default CreatePostsScreen = () => {
         };
     }, [img, name, location]);
 
+    const handleClear = () => {
+        setImg(null);
+        setName("");
+        setLocation("");
+    };
+
     return (
+        <View style={{flex: 1}}>
         <View
             style={styles.container}
         >
@@ -65,8 +73,21 @@ export default CreatePostsScreen = () => {
                     : "Опубліковати"
                 }
                 onPress={() => console.log("Hello")}
-                style={styles.button}
             />
+        </View>
+        <View
+            style={styles.containerTrash}
+        >
+            <TouchableOpacity
+                style={styles.buttonTrash}
+                onPress={handleClear}
+            >
+                <ImageBackground
+                    source={trash}
+                    style={styles.imageTrash}
+                />
+            </TouchableOpacity>
+        </View>
         </View>
     );
 };
@@ -108,7 +129,25 @@ const styles = StyleSheet.create({
         height: 24,
         width: 24,
     },
-    button: {
-        marginBottom: 111,
+    containerTrash: {
+        height: 71,
+
+        paddingTop: 9,
     },
+    buttonTrash: {
+        height: 40,
+        width: 70,
+
+        justifyContent: "center",
+        alignItems: "center",
+        alignSelf: "center",
+
+        backgroundColor: "#F6F6F6",
+
+        borderRadius: 20,
+    },
+    imageTrash: {
+        height: 24,
+        width: 24,
+    }
 })

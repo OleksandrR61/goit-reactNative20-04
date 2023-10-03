@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { TextInput, StyleSheet} from 'react-native';
+import { TextInput, StyleSheet, KeyboardAvoidingView, Platform} from 'react-native';
 
 export default InputText = ({
     value,
@@ -12,25 +12,31 @@ export default InputText = ({
 }) => {
     const [ isFocus, setIsFocus ] = useState(false);
 
-    return <TextInput
-        value={value}
-        onChangeText={onChangeText}
-        onFocus={() => setIsFocus(true)}
-        onBlur={() => setIsFocus(false)}
-        placeholder={placeholder}
-        keyboardType={keyboardType}
-        inputMode={inputMode}
-        secureTextEntry={secureTextEntry}
-        style={{
-            ...styles.input,
-            borderColor: isFocus
-                ? "#FF6C00"
-                : "#E8E8E8",
-            ...style
-        }}
-        placeholderTextColor={"#BDBDBD"}
-        selectionColor={"#212121"}        
-    />;
+    return (
+        <KeyboardAvoidingView
+            behavior={Platform.OS == "ios" ? "padding" : "height"}
+        >
+            <TextInput
+                value={value}
+                onChangeText={onChangeText}
+                onFocus={() => setIsFocus(true)}
+                onBlur={() => setIsFocus(false)}
+                placeholder={placeholder}
+                keyboardType={keyboardType}
+                inputMode={inputMode}
+                secureTextEntry={secureTextEntry}
+                style={{
+                    ...styles.input,
+                    borderColor: isFocus
+                        ? "#FF6C00"
+                        : "#E8E8E8",
+                    ...style
+                }}
+                placeholderTextColor={"#BDBDBD"}
+                selectionColor={"#212121"}        
+            />
+        </KeyboardAvoidingView>
+    );
 };
 
 const styles = StyleSheet.create({

@@ -4,8 +4,6 @@ import {
   SafeAreaView,
   TouchableWithoutFeedback,
   Keyboard,
-  KeyboardAvoidingView,
-  Platform,
   View,
 } from 'react-native';
 
@@ -26,13 +24,8 @@ export default function App() {
     <SafeAreaView style={{flex: 1}}>
       <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
         <View style={{flex: 1}}>
-          <KeyboardAvoidingView
-            behavior={Platform.OS == "ios" ? "padding" : "height"}
-            style={{flex: 1}}
-          >
-            <CreatePostsScreen />
-            <StatusBar style="auto" />
-          </KeyboardAvoidingView>
+          <CreatePostsScreen />
+          <StatusBar style="auto" />
         </View>
       </TouchableWithoutFeedback>
     </SafeAreaView>
