@@ -29,52 +29,52 @@ export default CreatePostsScreen = () => {
 
     return (
         <View style={{flex: 1}}>
-        <View
-            style={styles.container}
-        >
-            <InputPhoto
-                image={img}
-                onPress={setImg}
-            />
-
-            <InputText
-                value={name}
-                onChangeText={setName}
-                placeholder="Назва..."
-                style={{
-                    ...styles.inputText,
-                    ...styles.inputTextName
-                }}
-            />
-
             <View
-                style={styles.containerInput}
+                style={styles.container}
             >
+                <InputPhoto
+                    image={img}
+                    onPress={setImg}
+                />
+
                 <InputText
-                    value={location}
-                    onChangeText={setLocation}
-                    placeholder="Місцевість..."
+                    value={name}
+                    onChangeText={setName}
+                    placeholder="Назва..."
                     style={{
                         ...styles.inputText,
-                        ...styles.inputTextLocation
+                        ...styles.inputTextName
                     }}
                 />
 
-                <ImageBackground
-                    source={mapPin}
-                    style={styles.imageMapPin}
+                <View
+                    style={styles.containerInput}
+                >
+                    <InputText
+                        value={location}
+                        onChangeText={setLocation}
+                        placeholder="Місцевість..."
+                        style={{
+                            ...styles.inputText,
+                            ...styles.inputTextLocation
+                        }}
+                    />
+
+                    <ImageBackground
+                        source={mapPin}
+                        style={styles.imageMapPin}
+                    />
+                </View>
+
+                <ButtonPrimary
+                    isReady={isReady}
+                    title={isLoading
+                        ? "Очікуйте..."
+                        : "Опубліковати"
+                    }
+                    onPress={() => console.log("Hello")}
                 />
             </View>
-
-            <ButtonPrimary
-                isReady={isReady}
-                title={isLoading
-                    ? "Очікуйте..."
-                    : "Опубліковати"
-                }
-                onPress={() => console.log("Hello")}
-            />
-        </View>
         <View
             style={styles.containerTrash}
         >

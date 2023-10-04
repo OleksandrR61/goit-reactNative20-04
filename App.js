@@ -7,7 +7,7 @@ import {
   View,
 } from 'react-native';
 
-import { CreatePostsScreen } from './screens';
+import { CommentsScreen } from './screens';
 import { Container } from './components';
 
 export default function App() {
@@ -24,7 +24,7 @@ export default function App() {
     <SafeAreaView style={{flex: 1}}>
       <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
         <View style={{flex: 1}}>
-          <CreatePostsScreen />
+          <CommentsScreen />
           <StatusBar style="auto" />
         </View>
       </TouchableWithoutFeedback>
