@@ -6,6 +6,7 @@ import ButtonPrimary from "./ButtonPrimary/ButtonPrimary";
 import ButtonSecondary from "./ButtonSecondary/ButtonSecondary";
 import InputImage from "./InputImage/InputImage";
 import InputPhoto from "./InputPhoto/InputPhoto";
+import Image from "./Image/Image";
 
 export {
     Container,
@@ -16,4 +17,5 @@ export {
     ButtonSecondary,
     InputImage,
     InputPhoto,
+    Image,
 };
