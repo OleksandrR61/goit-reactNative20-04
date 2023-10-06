@@ -7,6 +7,8 @@ import ButtonSecondary from "./ButtonSecondary/ButtonSecondary";
 import InputImage from "./InputImage/InputImage";
 import InputPhoto from "./InputPhoto/InputPhoto";
 import Image from "./Image/Image";
+import CommentsList from "./CommentsList/CommentsList";
+import CommentsListItem from "./CommentsListItem/CommentsListItem";
 
 export {
     Container,
@@ -18,4 +20,6 @@ export {
     InputImage,
     InputPhoto,
     Image,
+    CommentsList,
+    CommentsListItem,
 };
