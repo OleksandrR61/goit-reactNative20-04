@@ -11,5 +11,8 @@ export default CommentsListItem = ({ comment: { author, text, date } }) => (
 );
 
 const styles = StyleSheet.create({
-    container: {},
+    container: {
+        backgroundColor: "blue",
+        marginBottom: 24,
+    },
 });

@@ -55,9 +55,8 @@ export default CommentsScreen = () => {
 
             <CommentsList
                 comments={exampleComments}
-            />
-
-            
+                style={styles.commentsList}
+            />            
         </View>
     );
 };
@@ -69,5 +68,8 @@ const styles = StyleSheet.create({
         paddingHorizontal: 16,
         paddingTop: 32,
         paddingBottom: 16,
+    },
+    commentsList: {
+        marginBottom: 32,
     },
 });
