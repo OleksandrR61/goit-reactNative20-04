@@ -17,7 +17,5 @@ export default CommentsList = ({ comments, style }) => (
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        columnGap: 25,
-        backgroundColor: "tomato",
     },
 });
