@@ -14,6 +14,7 @@ export default function App() {
   const [ isFontsLoaded ] = useFonts({
     'Roboto-Medium': require('./assets/fonts/Roboto-Medium.ttf'), //500
     'Roboto-Regular': require('./assets/fonts/Roboto-Regular.ttf'), //400
+    'Inter-Medium': require('./assets/fonts/Inter-Medium.ttf') //500
   });
 
   if (!isFontsLoaded) {

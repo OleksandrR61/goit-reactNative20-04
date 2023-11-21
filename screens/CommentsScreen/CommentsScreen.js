@@ -1,7 +1,9 @@
 import { useState } from "react";
-import { View, ImageBackground, StyleSheet } from "react-native";
+import { View, StyleSheet, Keyboard } from "react-native";
 
-import { Image, CommentsList } from "../../components";
+import { Image, CommentsList, InputText, ButtonImage } from "../../components";
+
+const months = ["січня", "лютого", "березня", "квітня", "травня", "червня", "липня", "серпня", "вересня", "жовтня", "листопада", "грудня"];
 
 const exampleComments = [
     {
@@ -43,7 +45,24 @@ const exampleComments = [
 ]
 
 export default CommentsScreen = () => {
+    const [ comments, setComments ] = useState(exampleComments)
     const [ newComment, setNewComment ] = useState("");
+
+    const handlePress = () => {
+        if (newComment) {
+            const dateNow = new Date();
+            
+            setComments(comments => [...comments, {
+                id: comments.length + 1,
+                author: require('../../assets/image/userExample.jpg'),
+                text: newComment,
+                date: `${dateNow.getDate() + 1} ${months[dateNow.getMonth()]}, ${dateNow.getFullYear()} | ${dateNow.getHours()}:${dateNow.getMinutes() < 10 ? "0" + dateNow.getMinutes() : dateNow.getMinutes()}`
+            }]);
+            setNewComment("");
+            
+            Keyboard.dismiss();
+        };
+    };
 
     return (
         <View
@@ -54,9 +73,28 @@ export default CommentsScreen = () => {
             />
 
             <CommentsList
-                comments={exampleComments}
+                comments={comments}
                 style={styles.commentsList}
-            />            
+            />
+
+            <View
+                style={styles.inputContainer}
+            >
+                <InputText
+                    value={newComment}
+                    onChangeText={setNewComment}
+                    placeholder="Коментувати..."
+                    style={styles.input}
+                />
+
+                <ButtonImage
+                    isReady={Boolean(newComment)}
+                    image={require("../../assets/image/vector.png")}
+                    onPress={handlePress}
+                    style={styles.buttonImageContainer}
+                    styleImage={styles.buttonImage}
+                />
+            </View>            
         </View>
     );
 };
@@ -69,7 +107,37 @@ const styles = StyleSheet.create({
         paddingTop: 32,
         paddingBottom: 16,
     },
-    commentsList: {
-        marginBottom: 32,
+    commentsList: {},
+    inputContainer: {
+        position: "relative",
+    },
+    input: {
+        marginBottom: 16,
+
+        borderRadius: 100,
+
+        fontFamily: "Inter-Medium",
+        fontWeight: "500",
+        lineHeight: 19.36,
+    },
+    buttonImageContainer: {
+        position: "absolute",
+        top: 8,
+        right: 8,
+
+        flex: 1,
+        justifyContent: "center",
+        alignItems: "center",
+        
+        height: 34,
+        width: 34,
+
+        borderRadius: 17,
+
+        backgroundColor: "#FF6C00",
+    },
+    buttonImage: {
+        width: 10,
+        height: 14,
     },
 });

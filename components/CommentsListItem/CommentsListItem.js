@@ -12,8 +12,17 @@ export default CommentsListItem = ({ comment: { author, text, date } }) => (
         <View
             style={styles.commentContainer}
         >
-            <Text>{text}</Text>
-            <Text>{date}</Text>
+            <Text
+                style={styles.comment}
+            >
+                {text}
+            </Text>
+            
+            <Text
+                style={styles.date}
+            >
+                {date}
+            </Text>
         </View>
     </View>
 );
@@ -21,19 +30,36 @@ export default CommentsListItem = ({ comment: { author, text, date } }) => (
 const styles = StyleSheet.create({
     container: {
         marginBottom: 24,
-        flex: 1,
         flexDirection: "row",
     },
     image: {
         height: 28,
         width: 28,
+        marginRight: 16,
         borderRadius: 14,
-        marginTop: 2,
-        marginRight: 32,
+        overflow: "hidden",
     },
     commentContainer: {
+        flex: 1,
         padding: 16,
         backgroundColor: "rgba(0, 0, 0, 0.03)",
         borderRadius: 6,
-    }
+        borderTopLeftRadius: 0,
+    },
+    comment: {
+        marginBottom: 8,
+        fontFamily: "Roboto-Regular",
+        fontWeight: "400",
+        fontSize: 13,
+        lineHeight: 18,
+        color: "#212121",
+    },
+    date: {
+        fontFamily: "Roboto-Regular",
+        fontWeight: "400",
+        fontSize: 10,
+        lineHeight: 11.72,
+        textAlign: "right",
+        color: "#BDBDBD",
+    },
 });

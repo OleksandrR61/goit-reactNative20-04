@@ -16,6 +16,5 @@ export default CommentsList = ({ comments, style }) => (
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
     },
 });

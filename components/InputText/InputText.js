@@ -27,10 +27,10 @@ export default InputText = ({
                 secureTextEntry={secureTextEntry}
                 style={{
                     ...styles.input,
+                    ...style,
                     borderColor: isFocus
                         ? "#FF6C00"
                         : "#E8E8E8",
-                    ...style
                 }}
                 placeholderTextColor={"#BDBDBD"}
                 selectionColor={"#212121"}        
